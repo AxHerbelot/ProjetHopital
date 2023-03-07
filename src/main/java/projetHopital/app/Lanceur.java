@@ -32,7 +32,7 @@ public class Lanceur {
 	private static void loggingIn(String phrase_prompt) {
 //delet that later and replace with a a list with a list of real logins and passwords
 		Map<String,String> mLogins = new HashMap<>();
-		mLogins.put("Doc1", "mdp1");mLogins.put("Doc2", "mdp2");mLogins.put("Secretaire", "mdp3");mLogins.put("Stop", null);
+		mLogins.put("Doc1", "mdp1");mLogins.put("Doc2", "mdp2");mLogins.put("Secretaire", "mdp3");
 		
 		
 		Scanner sc = new Scanner(System.in);

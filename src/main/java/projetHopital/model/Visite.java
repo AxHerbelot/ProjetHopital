@@ -3,9 +3,10 @@ package projetHopital.model;
 import java.util.Date;
 import java.util.Objects;
 
-public class Visite extends Patient {
-	
+public class Visite{
 	private Integer numeroVisite;
+	private Integer idPatient;
+	private Integer idMedecin;
 	private double cout;
 	private String salle;
 	private Date dateVisite;
@@ -13,37 +14,41 @@ public class Visite extends Patient {
 	
 	
 	   public Visite() {
-		   
 	   }
 
-
-
-	public Visite(Integer idPatien, String nom, String prenom) {
-		super(idPatien, nom, prenom);
-		this.cout=cout;
-		this.dateVisite=dateVisite;
-		this.numeroVisite=numeroVisite;
-		this.salle=salle;
-		
-		
+	public Visite(Integer numeroVisite, Integer idPatient, Integer idMedecin, double cout, String salle,
+			Date dateVisite) {
+		super();
+		this.numeroVisite = numeroVisite;
+		this.idPatient = idPatient;
+		this.idMedecin = idMedecin;
+		this.cout = cout;
+		this.salle = salle;
+		this.dateVisite = dateVisite;
 	}
 
 
+	
 
-	public Visite(String nom, String prenom) {
-		super(nom, prenom);
-		this.cout=cout;
-		this.dateVisite=dateVisite;
-		this.numeroVisite=numeroVisite;
-		this.salle=salle;
+	public Integer getIdPatient() {
+		return idPatient;
 	}
 
+	public void setIdPatient(Integer idPatient) {
+		this.idPatient = idPatient;
+	}
 
+	public Integer getIdMedecin() {
+		return idMedecin;
+	}
+
+	public void setIdMedecin(Integer idMedecin) {
+		this.idMedecin = idMedecin;
+	}
 
 	public Integer getNumeroVisite() {
 		return numeroVisite;
 	}
-
 
 
 	public void setNumeroVisite(Integer numeroVisite) {
@@ -110,17 +115,5 @@ public class Visite extends Patient {
 		return Objects.equals(numeroVisite, other.numeroVisite);
 	}
 
-        
-
-	      
-
-        
-	    
-	
-	
-	 
-
-	
-	
 
 }
