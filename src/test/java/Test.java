@@ -1,29 +1,18 @@
-
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import dao.Formation;
-
-
-
 public class Test {
 	List<Patient> fileAttente = new ArrayList<>();
-	
-	
+
 	public static void main(String[] args) {
-		
+
 	}
 
-	
-	
-	
-	
 	// côté secrétaire
-	
+
 	public void ajoutPatient(idPatient) {
 			
 		if (patientConnu) {
@@ -32,8 +21,7 @@ public class Test {
 			fileAttente.add(enregistrerPatient());
 		}
 	}
-	
-	
+
 	public boolean patientConnu(idPatient) {
 		// patients étant ici la BDD des patients
 		boolean connu = false;
@@ -42,8 +30,7 @@ public class Test {
 		}
 		return connu;
 	}
-	
-	
+
 	public Patient enregistrerPatient() {
 		// affecter un id, demander nom prenom
 		// dans l'idéal, faire un id qui auto-increment mais ça sera pour plus tard
@@ -59,17 +46,10 @@ public class Test {
 		
 		new Patient patient = Patient(id, prenom, nom);
 		
-		// patient.insert(patient) dans la BDD
+		// patient.insert(patient) dans la BDD quand les DAOs seront prêts
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
 	private Patient getPatient(ResultSet rs) throws SQLException {
 		// @formatter:off
 		Patient patient=new Patient(rs.getInt("idPatient"), rs.getString("prenom"), rs.getString("nom"));
