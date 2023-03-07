@@ -12,6 +12,17 @@ public abstract class Compte {
 	     public Compte() { 
 	     }
 
+	     
+	     
+		public Compte(Integer id, String login, String mdp) {
+			super();
+			this.id = id;
+			this.login = login;
+			this.mdp = mdp;
+		}
+
+
+
 		public Compte(String login, Integer id, String mdp, String typeCompte) {
 			
 			this.login = login;

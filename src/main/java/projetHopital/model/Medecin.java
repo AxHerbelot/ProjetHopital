@@ -3,7 +3,7 @@ package projetHopital.model;
 public class Medecin extends Compte {
 	
 	
-	private String typeCompte="d";
+	private String typeCompte="m";
 	
 	
 	
@@ -13,8 +13,8 @@ public class Medecin extends Compte {
 
 
 
-	public Medecin(String login, Integer id, String mdp, String typeCompte) {
-		super(login, id, mdp, typeCompte);
+	public Medecin(Integer id,String login, String mdp) {
+		super(id,login, mdp);
 		
 	}
 

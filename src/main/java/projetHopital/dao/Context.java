@@ -13,11 +13,17 @@ public class Context {
 				e.printStackTrace();
 			}
 		}
+		
+	// link PatientDao DAO to my context
+		private static CompteDao compteDao = new CompteDaoImp();
+		public static CompteDao getCompteDao() {
+			return compteDao;
+		}
 
 	//link PatientDao DAO to my context
-		private static PatientDao tab1Dao = new PatientDaoImp();
-		public static PatientDao getTab1Dao() {
-			return tab1Dao;
+		private static PatientDao patientDao = new PatientDaoImp();
+		public static PatientDao getPatientDao() {
+			return patientDao;
 		}
 		
 	//create a singleton of my context	
