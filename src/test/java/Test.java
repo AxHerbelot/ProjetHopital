@@ -40,7 +40,7 @@ public class Test {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		id = sc.nextInt(); // à remplacer par l'auto-increment
+		id = sc.nextInt(); // à remplacer par l'auto-increment de la BDD lors de l'insert
 		prenom = sc.nextLine();
 		nom = sc.nextLine();
 		
@@ -49,9 +49,16 @@ public class Test {
 		// patient.insert(patient) dans la BDD quand les DAOs seront prêts
 		
 	}
+	
+	public void afficherFile() {
+		for(Patient patient : fileAttente) {
+			System.out.println(patient.getPrenom() + " " + patient.getNom);
+		}
+	}
+	
 
+	// fonctionne avec une requête SQL
 	private Patient getPatient(ResultSet rs) throws SQLException {
-		// @formatter:off
 		Patient patient=new Patient(rs.getInt("idPatient"), rs.getString("prenom"), rs.getString("nom"));
 	}	
 	
@@ -67,6 +74,12 @@ public class Test {
 		return Objects.equals(id, other.id);
 	}
 	
+	
+	
+	// côté médecin
+	public void visitePatient(idPatient) {
+		
+	}
 	
 	
 	
