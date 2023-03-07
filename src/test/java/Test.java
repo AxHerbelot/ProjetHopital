@@ -32,13 +32,12 @@ public class Test {
 	}
 
 	public Patient enregistrerPatient() {
+		Scanner sc = new Scanner(System.in);
 		// affecter un id, demander nom prenom
 		// dans l'idéal, faire un id qui auto-increment mais ça sera pour plus tard
 		String prenom = null;
 		String nom = null;
 		int id = 0;
-		
-		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("ID du patient : ");
 		id = sc.nextInt(); // à remplacer par l'auto-increment de la BDD lors de l'insert
@@ -88,11 +87,15 @@ public class Test {
 	
 	// côté médecin
 	public void visitePatient(int idPatient) {
+		Scanner sc = new Scanner(System.in);
 		// numeroVisite auto-increment par BDD
-		idMedecin = medecin.getId();
-		salle = medecin.getSalle();
-		// date ?
+		int idMedecin = medecin.getId();
+		int salle = medecin.getSalle();
+		LocalDate date = ;
 		int cout = 20;
+		
+		System.out.println("Date : ");
+		date = sc.nextLine();
 		
 		
 	}
