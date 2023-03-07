@@ -139,6 +139,7 @@ public class Lanceur {
 		System.out.println("Ajouter un patient à la Liste d'Attente (AddLA)");
 		System.out.println("Faire une pause (P)");
 		System.out.println("Déconnection (DC)");
+		System.out.print("Action: ");
 		String action = sc.nextLine();
 		return action;
 	}
@@ -158,6 +159,7 @@ public class Lanceur {
 		System.out.println("Rendre la salle dispo (RSD)");
 		System.out.println("Sauvegarder la liste des visites (SLV)");
 		System.out.println("Déconnection (DC)");
+		System.out.print("Action: ");
 		String action = sc.nextLine();
 		return action;
 	}
