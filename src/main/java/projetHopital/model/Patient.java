@@ -1,96 +1,89 @@
-package projetHopital.model;
+package main.java.projetHopital.model;
 
 import java.util.Objects;
 
-public class Patient {
+public abstract class Patient {
+
 	
-	private Integer idPatient;
+	
+	
+	private Integer idPatien;
 	private String nom;
 	private String prenom;
 	
 	
-	
-	   Patient(){
-		   
-	   }
+	      public Patient() {
+	    	  
+	      }
 
 
+		public Patient(Integer idPatien, String nom, String prenom) {
+			
+			this.idPatien = idPatien;
+			this.nom = nom;
+			this.prenom = prenom;
+		}
 
-	public Patient(Integer idPatient, String nom, String prenom) {
+
+		public Patient(String nom, String prenom) {
 		
-		this.idPatient = idPatient;
-		this.nom = nom;
-		this.prenom = prenom;
-	}
+			this.nom = nom;
+			this.prenom = prenom;
+		}
 
 
-
-	public Patient(String nom, String prenom) {
-		super();
-		this.nom = nom;
-		this.prenom = prenom;
-	}
+		public Integer getIdPatien() {
+			return idPatien;
+		}
 
 
-
-	public Integer getIdPatient() {
-		return idPatient;
-	}
-
+		public void setIdPatien(Integer idPatien) {
+			this.idPatien = idPatien;
+		}
 
 
-	public void setIdPatient(Integer idPatient) {
-		this.idPatient = idPatient;
-	}
+		public String getNom() {
+			return nom;
+		}
 
 
-
-	public String getNom() {
-		return nom;
-	}
-
+		public void setNom(String nom) {
+			this.nom = nom;
+		}
 
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
+		public String getPrenom() {
+			return prenom;
+		}
 
 
-
-	public String getPrenom() {
-		return prenom;
-	}
-
+		public void setPrenom(String prenom) {
+			this.prenom = prenom;
+		}
 
 
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
+		@Override
+		public int hashCode() {
+			return Objects.hash(idPatien);
+		}
 
 
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(idPatient);
-	}
-
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Patient other = (Patient) obj;
-		return Objects.equals(idPatient, other.idPatient);
-	}
-	
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Patient other = (Patient) obj;
+			return Objects.equals(idPatien, other.idPatien);
+		}
+	      
+	      
 	  
 	
-	   
-	   
-
+	     
+	
+	
 }
