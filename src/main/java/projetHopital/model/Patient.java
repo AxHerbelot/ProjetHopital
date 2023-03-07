@@ -2,7 +2,7 @@ package projetHopital.model;
 
 import java.util.Objects;
 
-public abstract class Patient {
+public class Patient {
 
 	
 	

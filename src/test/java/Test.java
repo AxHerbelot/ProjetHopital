@@ -16,8 +16,9 @@ public class Test {
 	// côté secrétaire
 
 	public void ajoutPatient(int idPatient) {
-			
+		Patient patient = null;
 		if (patientConnu(idPatient)) {
+			patient = patient.findByKey(idPatient);
 			fileAttente.add(patient);
 		} else {
 			fileAttente.add(enregistrerPatient());
@@ -50,7 +51,9 @@ public class Test {
 		System.out.println("Nom du patient : ");
 		nom = sc.nextLine();
 		
-		new Patient patient = Patient(id, prenom, nom);
+		Patient patient = new Patient(id, prenom, nom);
+		
+		return patient;
 		
 		// patient.insert(patient) dans la BDD quand les DAOs seront prêts
 		
@@ -71,6 +74,7 @@ public class Test {
 	// fonctionne avec une requête SQL
 	private Patient getPatient(ResultSet rs) throws SQLException {
 		Patient patient=new Patient(rs.getInt("idPatient"), rs.getString("prenom"), rs.getString("nom"));
+		return patient;
 	}	
 	
 	
