@@ -1,4 +1,4 @@
-package main.java.projetHopital.model;
+package projetHopital.model;
 
 public class Secretaire extends Compte {
 	

@@ -1,4 +1,4 @@
-package main.java.projetHopital.model;
+package projetHopital.model;
 
 import java.util.Date;
 import java.util.Objects;
