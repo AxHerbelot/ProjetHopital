@@ -2,23 +2,18 @@ package projetHopital.model;
 
 import java.util.Objects;
 
-public abstract class Patient {
-
-	
-	
-	
+public class Patient {
 	private Integer idPatien;
 	private String nom;
 	private String prenom;
 	
 	
-	      public Patient() {
+	    public Patient() {
 	    	  
 	      }
 
 
 		public Patient(Integer idPatien, String nom, String prenom) {
-			
 			this.idPatien = idPatien;
 			this.nom = nom;
 			this.prenom = prenom;

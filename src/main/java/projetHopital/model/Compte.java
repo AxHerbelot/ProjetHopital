@@ -8,14 +8,9 @@ public abstract class Compte {
 	private String login;
 	private String mdp;
 	private String typeCompte;
-	
-	
 	   
-	     public Compte() {
-	    	 
+	     public Compte() { 
 	     }
-
-
 
 		public Compte(String login, Integer id, String mdp, String typeCompte) {
 			
@@ -24,8 +19,6 @@ public abstract class Compte {
 			this.mdp = mdp;
 			this.typeCompte = typeCompte;
 		}
-
-
 
 		public Compte(String login, String mdp, String typeCompte) {
 		
@@ -102,11 +95,6 @@ public abstract class Compte {
 			Compte other = (Compte) obj;
 			return Objects.equals(id, other.id);
 		}
-	   
-		
-		
-		
-	   
 		
 	      
 	
