@@ -57,13 +57,13 @@ public class Lanceur {
 					System.out.println("*-----------------------------------------------*");
 					System.out.println("|                Compte médecin                 |");
 					System.out.println("*-----------------------------------------------*");
-					accesMedecin();
+					accesMedecin(1);
 					break;
 				case "Doc2":
 					System.out.println("*-----------------------------------------------*");
 					System.out.println("|                Compte médecin                 |");
 					System.out.println("*-----------------------------------------------*");
-					accesMedecin();
+					accesMedecin(2);
 					break;
 				case "Secretaire":
 					System.out.println("*-----------------------------------------------*");
@@ -79,22 +79,23 @@ public class Lanceur {
 		
 	}
 	
-	private static void accesMedecin() {
-		String action = actionsSecretaire();
+	private static void accesMedecin(int numeroMedecin) {
+		String action = actionsMedecin(numeroMedecin);
 		switch (action.toLowerCase()) {
 		case "la":
+			System.out.println();
 			System.err.println("Afficher la Liste d'Attente");
-			accesSecretaire();
+			accesMedecin(numeroMedecin);
 			break;
 		
-		case "addla":
-			System.err.println("Ajouter patient à la liste d'attente");
-			accesSecretaire();
+		case "rsd":
+			System.err.println("Rendre la salle dispo");
+			accesMedecin(numeroMedecin);
 			break;
 			
-		case "p":
-			System.err.println("Faire une pause");
-			accesSecretaire();
+		case "slv":
+			System.err.println("Sauvegarder la liste des visites");
+			accesMedecin(numeroMedecin);
 			break;
 			
 		case "dc":
