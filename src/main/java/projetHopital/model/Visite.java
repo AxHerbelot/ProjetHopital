@@ -1,28 +1,28 @@
 package projetHopital.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
 public class Visite{
 	private Integer numeroVisite;
-	private Integer idPatient;
+	private Patient patient;
 	private Integer idMedecin;
 	private double cout;
 	private String salle;
-	private Date dateVisite;
+	private LocalDate dateVisite;
 	
 	
 	
 	   public Visite() {
 	   }
 
-	public Visite(Integer numeroVisite, Integer idPatient, Integer idMedecin, double cout, String salle,
-			Date dateVisite) {
+	public Visite(Integer numeroVisite, Patient patient, Integer idMedecin, String salle, LocalDate dateVisite) {
 		super();
 		this.numeroVisite = numeroVisite;
-		this.idPatient = idPatient;
+		this.patient = patient;
 		this.idMedecin = idMedecin;
-		this.cout = cout;
+		this.cout = 20;
 		this.salle = salle;
 		this.dateVisite = dateVisite;
 	}
@@ -30,12 +30,13 @@ public class Visite{
 
 	
 
-	public Integer getIdPatient() {
-		return idPatient;
+
+	public Patient getPatient() {
+		return patient;
 	}
 
-	public void setIdPatient(Integer idPatient) {
-		this.idPatient = idPatient;
+	public void setPatient(Patient patient) {
+		this.patient = patient;
 	}
 
 	public Integer getIdMedecin() {
@@ -79,19 +80,13 @@ public class Visite{
 		this.salle = salle;
 	}
 
-
-
-	public Date getDateVisite() {
+	public LocalDate getDateVisite() {
 		return dateVisite;
 	}
 
-
-
-	public void setDateVisite(Date dateVisite) {
+	public void setDateVisite(LocalDate dateVisite) {
 		this.dateVisite = dateVisite;
 	}
-
-
 
 	@Override
 	public int hashCode() {

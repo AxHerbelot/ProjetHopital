@@ -15,6 +15,12 @@ public class Context {
 		}
 		
 	// link PatientDao DAO to my context
+		private static VisiteDao visiteDao = new VisiteDaoImp();
+		public static VisiteDao getVisiteDao() {
+			return visiteDao;
+		}
+		
+	// link PatientDao DAO to my context
 		private static CompteDao compteDao = new CompteDaoImp();
 		public static CompteDao getCompteDao() {
 			return compteDao;

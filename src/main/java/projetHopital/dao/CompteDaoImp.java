@@ -31,16 +31,10 @@ public class CompteDaoImp implements CompteDao{
 			preparedStatement.setString(1, obj.getLogin());
 			preparedStatement.setString(2, obj.getMdp());
 			preparedStatement.setString(3, obj.getTypeCompte());
-			preparedStatement.setInt(3, obj.getId());
+			preparedStatement.setInt(4, obj.getId());
 			preparedStatement.executeUpdate();
 			preparedStatement.close();
 		} catch (SQLException e) {e.printStackTrace();} finally {Context.destroy();}
-	}
-
-	@Override
-	public void delete(Compte obj) {
-		deleteByKey(obj.getId());
-		
 	}
 
 	@Override
@@ -51,6 +45,12 @@ public class CompteDaoImp implements CompteDao{
 			preparedStatement.executeUpdate();
 			preparedStatement.close();
 		} catch (SQLException e) {e.printStackTrace();} finally {Context.destroy();}
+		
+	}
+	
+	@Override
+	public void delete(Compte obj) {
+		deleteByKey(obj.getId());
 		
 	}
 
