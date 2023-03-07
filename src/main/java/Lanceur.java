@@ -12,17 +12,17 @@ public class Lanceur {
 //		System.out.println(mLogins.get("Doc1"));
 
 //DELET THAT LATER NEEDED FOR TEST NOW LIST D'ATTENTE
-		Object LA = "1234";
+//		Object LA = "1234";
 		
 		// Interface de login
-//		System.out.println("                Compte secrétaire                ");		
+//		System.out.println("|                 Compte médecin                 |");		
 		System.out.println("*------------------------------------------------*");
 		System.out.println("|         Bienvenue à l'hôpital du style         |");
 		System.out.println("*------------------------------------------------*");
 
 		loggingIn("             Veuillez vous enregsitrer            ");
 		
-		System.out.println("Beubaille");
+		System.out.println("Aurevoir");
 		
 
 	}
@@ -37,7 +37,9 @@ public class Lanceur {
 		System.out.println(phrase_prompt);
 		System.out.print(" Login: ");
 		String login = sc.nextLine();
-		
+		if(login.toLowerCase().equals("q")) {
+			return;
+		}
 		if (!mLogins.containsKey(login)){
 			System.err.println("login innexistant");
 			loggingIn("        Veuillez vous enregsitrer à nouveau       ");
@@ -52,14 +54,20 @@ public class Lanceur {
 				System.out.println("Loggin successful");
 				switch (login) {
 				case "Doc1":
+					System.out.println("*-----------------------------------------------*");
+					System.out.println("|                Compte médecin                 |");
+					System.out.println("*-----------------------------------------------*");
 					accesMedecin();
 					break;
 				case "Doc2":
+					System.out.println("*-----------------------------------------------*");
+					System.out.println("|                Compte médecin                 |");
+					System.out.println("*-----------------------------------------------*");
 					accesMedecin();
 					break;
 				case "Secretaire":
 					System.out.println("*-----------------------------------------------*");
-					System.out.println("                Compte secrétaire                ");
+					System.out.println("|               Compte secrétaire               |");
 					System.out.println("*-----------------------------------------------*");
 					accesSecretaire();
 					break;
@@ -72,28 +80,49 @@ public class Lanceur {
 	}
 	
 	private static void accesMedecin() {
-		
-	}
-	
-	private static void accesSecretaire() {
 		String action = actionsSecretaire();
-		switch (action) {
-		case "LA":
+		switch (action.toLowerCase()) {
+		case "la":
 			System.err.println("Afficher la Liste d'Attente");
 			accesSecretaire();
 			break;
 		
-		case "AddLA":
+		case "addla":
 			System.err.println("Ajouter patient à la liste d'attente");
 			accesSecretaire();
 			break;
 			
-		case "P":
+		case "p":
 			System.err.println("Faire une pause");
 			accesSecretaire();
 			break;
 			
-		case "DC":
+		case "dc":
+			System.err.println("Déconnection réussie");
+			loggingIn("             Veuillez vous enregsitrer            ");
+			break;
+		}
+	}
+	
+	private static void accesSecretaire() {
+		String action = actionsSecretaire();
+		switch (action.toLowerCase()) {
+		case "la":
+			System.err.println("Afficher la Liste d'Attente");
+			accesSecretaire();
+			break;
+		
+		case "addla":
+			System.err.println("Ajouter patient à la liste d'attente");
+			accesSecretaire();
+			break;
+			
+		case "p":
+			System.err.println("Faire une pause");
+			accesSecretaire();
+			break;
+			
+		case "dc":
 			System.err.println("Déconnection réussie");
 			loggingIn("             Veuillez vous enregsitrer            ");
 			break;
@@ -119,6 +148,17 @@ public class Lanceur {
 	}
 	private static void ajouterPatientLA(int idPatient) {
 		
+	}
+	
+	private static String actionsMedecin(int numero_medecin) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("            Veuillez saisir une action           ");
+		System.out.println("Afficher la Liste d'Attente (LA)");
+		System.out.println("Rendre la salle dispo (RSD)");
+		System.out.println("Sauvegarder la liste des visites (SLV)");
+		System.out.println("Déconnection (DC)");
+		String action = sc.nextLine();
+		return action;
 	}
 }
 
