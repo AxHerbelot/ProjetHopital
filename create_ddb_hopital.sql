@@ -24,7 +24,7 @@ CREATE TABLE `visite` (
   `idPatient` int DEFAULT NULL,
   `id` int DEFAULT NULL,
   `cout` double DEFAULT NULL,
-  `visitecol` varchar(45) DEFAULT NULL,
+
   `salle` varchar(6) DEFAULT NULL,
   `dateVisite` datetime DEFAULT NULL,
   PRIMARY KEY (`numeroVisite`)
