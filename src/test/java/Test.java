@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import projetHopital.model.Patient;
+
 public class Test {
 	List<Patient> fileAttente = new ArrayList<>();
 
@@ -56,7 +58,7 @@ public class Test {
 	
 	public void afficherFile() {
 		for(Patient patient : fileAttente) {
-			System.out.println(patient.getPrenom() + " " + patient.getNom);
+			System.out.println(patient.getPrenom() + " " + patient.getNom());
 		}
 	}
 	
@@ -91,11 +93,11 @@ public class Test {
 		// numeroVisite auto-increment par BDD
 		int idMedecin = medecin.getId();
 		int salle = medecin.getSalle();
-		LocalDate date = ;
+		// LocalDate date = ;
 		int cout = 20;
 		
 		System.out.println("Date : ");
-		date = sc.nextLine();
+		// date = sc.nextLine();
 		
 		
 	}
