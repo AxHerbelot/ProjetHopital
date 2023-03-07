@@ -38,6 +38,8 @@ public class TestAlexis {
 		visiteDao.insert(visite1);
 		System.out.println(visiteDao.findByKey(visite1.getNumeroVisite()));
 		visiteDao.findAll().forEach(v->{System.out.println(v.getNumeroVisite());});
+		visite1.setSalle("salle2");
+		visiteDao.update(visite1);
 		visiteDao.delete(visite1);
 		patientDao.delete(patient1);
 		System.out.println("fin");

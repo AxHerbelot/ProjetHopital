@@ -29,7 +29,7 @@ public class VisiteDaoImp implements VisiteDao{
 	@Override
 	public void update(Visite obj) {
 		 try {
-			PreparedStatement preparedStatement=Context.getContext().getConnection().prepareStatement("update compte set idPatient=?, idMedecin=?, cout=20, salle=?, dateVisite=?  where inumeroVisite=?");
+			PreparedStatement preparedStatement=Context.getContext().getConnection().prepareStatement("update visite set idPatient=?, idMedecin=?, cout=20, salle=?, dateVisite=?  where numeroVisite=?");
 			preparedStatement.setInt(1, obj.getPatient().getIdPatien());
 			preparedStatement.setInt(2, obj.getIdMedecin());
 			preparedStatement.setString(3, obj.getSalle());
