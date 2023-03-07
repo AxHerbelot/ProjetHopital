@@ -61,6 +61,11 @@ public class Test {
 		}
 	}
 	
+	public void afficherProchainPatient() {
+		// trouver min_id qui ne soit pas déjà passé dans la liste des visites
+		
+	}
+	
 
 	// fonctionne avec une requête SQL
 	private Patient getPatient(ResultSet rs) throws SQLException {
@@ -84,7 +89,9 @@ public class Test {
 	// côté médecin
 	public void visitePatient(int idPatient) {
 		// numeroVisite auto-increment par BDD
-		// récupérer l'id du médecin, la salle, la date
+		idMedecin = medecin.getId();
+		salle = medecin.getSalle();
+		// date ?
 		int cout = 20;
 		
 		
