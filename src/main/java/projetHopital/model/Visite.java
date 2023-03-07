@@ -3,7 +3,7 @@ package projetHopital.model;
 import java.util.Date;
 import java.util.Objects;
 
-public class Visite extends Patient {
+public class Visite{
 	
 	private Integer numeroVisite;
 	private double cout;
