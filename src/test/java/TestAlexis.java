@@ -12,29 +12,14 @@ import projetHopital.model.Visite;
 public class TestAlexis {
 	public static void main(String[] args) {
 		System.out.println("----------------------------PATIENTS----------------------------------");
-		System.out.println("------Add 1st row (insert) then print by key (findByKey) and print all (findAll)-------");
-		Patient patient1=new Patient(1, "Bob", "Rachet");
 		PatientDao patientDao = Context.getPatientDao();
+		Patient patient1=new Patient(1, "Bob", "Rachet");
 		patientDao.insert(patient1);
-		patient1 = null;
-		System.out.println("-findByKey-");
-		patient1 = patientDao.findByKey(1);
-		System.out.println(patient1.getIdPatien()+" "+patient1.getNom()+" "+patient1.getPrenom());
-		System.out.println("-findAll-");
-		List<Patient> allPatients = patientDao.findAll();
-		allPatients.forEach(p -> {System.out.println(p.getIdPatien()+" "+p.getNom()+" "+p.getPrenom());});
-		System.out.println("-------Update name of patient------");
+		System.out.println(patient1 = patientDao.findByKey(1));
+		patientDao.findAll().forEach(p -> {System.out.println(p.getIdPatien());});
 		patient1.setNom("Billy");
 		patientDao.update(patient1);
-		Patient updatedPatient1 = patientDao.findByKey(1);
-		System.out.println(updatedPatient1.getIdPatien()+" "+updatedPatient1.getNom()+" "+updatedPatient1.getPrenom());
-		
-		
-		System.out.println("------Delet row (delet) then print all (findAll)-------");
 		patientDao.delete(patient1);
-		allPatients = patientDao.findAll();
-		allPatients.forEach(p -> {System.out.println(p.getIdPatien()+" "+p.getNom()+" "+p.getPrenom());});
-		
 		
 		System.out.println("---------------------------------COMPTE---------------------------------------");
 		CompteDao compteDao = Context.getCompteDao();
