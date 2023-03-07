@@ -11,19 +11,19 @@ import projetHopital.model.Visite;
 
 public class TestAlexis {
 	public static void main(String[] args) {
-		System.out.println("----------------------------PATIENTS----------------------------------");
+		System.out.println("---------PATIENTS-----------");
 		PatientDao patientDao = Context.getPatientDao();
-		Patient patient1=new Patient(1, "Bob", "Rachet");
+		Patient patient1=new Patient(999, "Bob", "Rachet");
 		patientDao.insert(patient1);
-		System.out.println(patient1 = patientDao.findByKey(1));
+		System.out.println(patient1 = patientDao.findByKey(patient1.getIdPatien()));
 		patientDao.findAll().forEach(p -> {System.out.println(p.getIdPatien());});
 		patient1.setNom("Billy");
 		patientDao.update(patient1);
 		patientDao.delete(patient1);
 		
-		System.out.println("---------------------------------COMPTE---------------------------------------");
+		System.out.println("----------COMPTE------------");
 		CompteDao compteDao = Context.getCompteDao();
-		Medecin compte1=new Medecin(1, "Doc1", "mdp1");
+		Medecin compte1=new Medecin(10, "Doc1", "mdp1");
 		compteDao.insert(compte1);
 		System.out.println(compteDao.findByKey(compte1.getId()));
 		compteDao.findAll().forEach(m->{System.out.println(m.getId());});
@@ -31,11 +31,10 @@ public class TestAlexis {
 		compteDao.update(compte1);
 		compteDao.delete(compte1);
 		
-		System.out.println("---------------------------------VISITE---------------------------------------");
+		System.out.println("----------VISITE------------");
 		VisiteDao visiteDao = Context.getVisiteDao();
-		patient1=new Patient(1, "Bob", "Rachet");
 		patientDao.insert(patient1);
-		Visite visite1 = new Visite(1, patient1, 1, "salle1", LocalDate.of(2023, 03, 07));
+		Visite visite1 = new Visite(999, patient1, 1, "salle1", LocalDate.of(2023, 03, 07));
 		visiteDao.insert(visite1);
 		System.out.println(visiteDao.findByKey(visite1.getNumeroVisite()));
 		visiteDao.findAll().forEach(v->{System.out.println(v.getNumeroVisite());});
