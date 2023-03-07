@@ -13,16 +13,16 @@ public class Test {
 
 	// côté secrétaire
 
-	public void ajoutPatient(idPatient) {
+	public void ajoutPatient(int idPatient) {
 			
-		if (patientConnu) {
+		if (patientConnu(idPatient)) {
 			fileAttente.add(patient);
 		} else {
 			fileAttente.add(enregistrerPatient());
 		}
 	}
 
-	public boolean patientConnu(idPatient) {
+	public boolean patientConnu(int idPatient) {
 		// patients étant ici la BDD des patients
 		boolean connu = false;
 		if (patients.stream().filter(patient-> patient.getId().equals(idPatient)).findFirst()) {
@@ -40,8 +40,13 @@ public class Test {
 		
 		Scanner sc = new Scanner(System.in);
 		
+		System.out.println("ID du patient : ");
 		id = sc.nextInt(); // à remplacer par l'auto-increment de la BDD lors de l'insert
+		
+		System.out.println("Prénom du patient : ");
 		prenom = sc.nextLine();
+		
+		System.out.println("Nom du patient : ");
 		nom = sc.nextLine();
 		
 		new Patient patient = Patient(id, prenom, nom);
@@ -77,7 +82,11 @@ public class Test {
 	
 	
 	// côté médecin
-	public void visitePatient(idPatient) {
+	public void visitePatient(int idPatient) {
+		// numeroVisite auto-increment par BDD
+		// récupérer l'id du médecin, la salle, la date
+		int cout = 20;
+		
 		
 	}
 	
