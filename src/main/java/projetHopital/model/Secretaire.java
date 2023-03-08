@@ -15,8 +15,8 @@ public class Secretaire extends Compte {
 
 
 
-	public Secretaire(String login, Integer id, String mdp, String typeCompte) {
-		super(login, id, mdp, typeCompte);
+	public Secretaire(Integer id, String login,  String mdp) {
+		super(id, login,  mdp);
 		
 	}
 

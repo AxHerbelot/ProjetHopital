@@ -15,12 +15,11 @@ public class VisiteDaoImp implements VisiteDao{
 	@Override
 	public void insert(Visite obj) {
 		try {
-			PreparedStatement preparedStatement = Context.getContext().getConnection().prepareStatement("insert into visite(numeroVisite,idPatient,idMedecin,cout,salle,dateVisite) values(?,?,?,20,?,?)");
-			preparedStatement.setInt(1, obj.getNumeroVisite());
-			preparedStatement.setInt(2, obj.getPatient().getIdPatien());
-			preparedStatement.setInt(3, obj.getIdMedecin());
-			preparedStatement.setString(4, obj.getSalle());
-			preparedStatement.setDate(5, Date.valueOf(obj.getDateVisite()));
+			PreparedStatement preparedStatement = Context.getContext().getConnection().prepareStatement("insert into visite(idPatient,idMedecin,cout,salle,dateVisite) values(?,?,20,?,?)");
+			preparedStatement.setInt(1, obj.getPatient().getIdPatien());
+			preparedStatement.setInt(2, obj.getIdMedecin());
+			preparedStatement.setString(3, obj.getSalle());
+			preparedStatement.setDate(4, Date.valueOf(obj.getDateVisite()));
 			preparedStatement.executeUpdate();
 			preparedStatement.close();
 		} catch(SQLException e) {e.printStackTrace();} finally {Context.destroy();}

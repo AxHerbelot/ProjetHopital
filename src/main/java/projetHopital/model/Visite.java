@@ -28,7 +28,15 @@ public class Visite{
 	}
 
 
-	
+	public Visite(Patient patient, Integer idMedecin, String salle, LocalDate dateVisite) {
+		super();
+		this.patient = patient;
+		this.idMedecin = idMedecin;
+		this.cout = 20;
+		this.salle = salle;
+		this.dateVisite = dateVisite;
+	}
+
 
 
 	public Patient getPatient() {
